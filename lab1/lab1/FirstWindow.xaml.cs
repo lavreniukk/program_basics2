@@ -65,9 +65,9 @@ namespace lab1
             for (int i = 0; i < studentsData.Count; i++)
                 if (ID == studentsData[i].getID())
                     studentsData.Remove(studentsData[i]);
-            StreamWriter sw = new StreamWriter(@"\studentsData.txt");
-            for (int i = 0; i < studentsData.Count; i++)
-                studentsData[i].printStudent(sw);
+            StreamWriter sw = new StreamWriter(@"D://projects//studentsData.txt");
+            foreach (Student person in studentsData)
+                person.printStudent(sw);
             sw.Close();
         }
 
@@ -77,7 +77,7 @@ namespace lab1
             string Name = TextBoxName.Text;
             string Data = TextBoxInfo.Text;
             studentsData.Add(new Student(ID, Name, Data));
-            StreamWriter sw = new StreamWriter(@"\studentsData.txt");
+            StreamWriter sw = new StreamWriter(@"D://projects//studentsData.txt");
             foreach (Student person in studentsData)
                 person.printStudent(sw);
             sw.Close();
