@@ -21,3 +21,26 @@ D:\КПІ\Основи програмування\Семестр 2\Лабора�
 D:\КПІ\Основи програмування\Семестр 2\Лабораторна 1\lab1\lab1\obj\Debug\FourthWindow.baml
 D:\КПІ\Основи програмування\Семестр 2\Лабораторна 1\lab1\lab1\obj\Debug\SecondWindow.baml
 D:\КПІ\Основи програмування\Семестр 2\Лабораторна 1\lab1\lab1\obj\Debug\ThirdWindow.baml
+D:\projects\program_basics2\lab1\lab1\bin\Debug\lab1.exe.config
+D:\projects\program_basics2\lab1\lab1\bin\Debug\lab1.exe
+D:\projects\program_basics2\lab1\lab1\bin\Debug\lab1.pdb
+D:\projects\program_basics2\lab1\lab1\obj\Debug\lab1.csprojAssemblyReference.cache
+D:\projects\program_basics2\lab1\lab1\obj\Debug\FirstWindow.g.cs
+D:\projects\program_basics2\lab1\lab1\obj\Debug\FourthWindow.g.cs
+D:\projects\program_basics2\lab1\lab1\obj\Debug\MainWindow.g.cs
+D:\projects\program_basics2\lab1\lab1\obj\Debug\SecondWindow.g.cs
+D:\projects\program_basics2\lab1\lab1\obj\Debug\ThirdWindow.g.cs
+D:\projects\program_basics2\lab1\lab1\obj\Debug\App.g.cs
+D:\projects\program_basics2\lab1\lab1\obj\Debug\lab1_MarkupCompile.cache
+D:\projects\program_basics2\lab1\lab1\obj\Debug\lab1_MarkupCompile.lref
+D:\projects\program_basics2\lab1\lab1\obj\Debug\FirstWindow.baml
+D:\projects\program_basics2\lab1\lab1\obj\Debug\FourthWindow.baml
+D:\projects\program_basics2\lab1\lab1\obj\Debug\MainWindow.baml
+D:\projects\program_basics2\lab1\lab1\obj\Debug\SecondWindow.baml
+D:\projects\program_basics2\lab1\lab1\obj\Debug\ThirdWindow.baml
+D:\projects\program_basics2\lab1\lab1\obj\Debug\lab1.g.resources
+D:\projects\program_basics2\lab1\lab1\obj\Debug\lab1.Properties.Resources.resources
+D:\projects\program_basics2\lab1\lab1\obj\Debug\lab1.csproj.GenerateResource.cache
+D:\projects\program_basics2\lab1\lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache
+D:\projects\program_basics2\lab1\lab1\obj\Debug\lab1.exe
+D:\projects\program_basics2\lab1\lab1\obj\Debug\lab1.pdb
