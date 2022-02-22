@@ -102,7 +102,22 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Rectangle Fill="#FF848585" Grid.Row="1" Grid.ColumnSpan="3" Stroke="#FF434343" Height="340" Margin="268,0.4,268,-0.8" RadiusX="15" RadiusY="15"/>
+        <Rectangle Grid.Row="1" Grid.ColumnSpan="3" Stroke="#FF434343" Height="340" Margin="268,0.4,268,-0.8" RadiusX="15" RadiusY="15">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="-19" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF494B4B" Offset="0"/>
+                    <GradientStop Color="#FF848585" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
         <Rectangle Grid.ColumnSpan="3" Grid.Row="0" Fill="#FFD4BD75" VerticalAlignment="Top" Height="30" Stroke="#FFBDA96B" />
         <Label x:Name="GameLabel" Content="   Calculator" Height="30" Grid.Column="0" Grid.Row ="0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="14" Foreground="#FF4F4D49" BorderBrush="#FFA68249" Background="#FFD4BD75"/>
         <Grid x:Name="Calculator" Grid.Column="1" Grid.Row="1" Margin="0,70,0,70">
