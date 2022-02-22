@@ -86,6 +86,7 @@ namespace prac1
                 return;
             }
             timer.Stop();
+            SymbolCount.Content = InputField.Text.Length;
 
             if (InputField.Text.Length == 1)
             {

@@ -425,6 +425,6 @@ WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
         <Label x:Name="DispField" HorizontalAlignment="Right"
         Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Height="27"
         Width="123" FontFamily="Malgun Gothic" FontSize="15" Foreground="#FF060152"/>
-        <Label Content="0,05" HorizontalAlignment="Left" Height="27" Margin="238.8,4.4,0,0" VerticalAlignment="Center" Width="53" Grid.Column="1" Grid.Row="2" FontFamily="Malgun Gothic" FontSize="15" Foreground="#FF060152"/>
+        <Label Content="0,05" HorizontalAlignment="Left" Height="27" Margin="233.8,4.4,0,5.4" VerticalAlignment="Center" Width="53" Grid.Column="1" Grid.Row="2" FontFamily="Malgun Gothic" FontSize="15" Foreground="#FF060152"/>
     </Grid>
 </Window>
