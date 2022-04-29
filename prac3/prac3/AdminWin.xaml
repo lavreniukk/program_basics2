@@ -1,0 +1,305 @@
+﻿<Window x:Class="prac3.AdminWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prac3"
+        mc:Ignorable="d"
+        Title="AdminWin" Height="500" Width="1000" Background="#FFDFE9E6" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="Exit" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="6">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="TextElement.Foreground" TargetName="border" Value="#dfe9e6"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#dfe9e6"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="TextElement.Foreground" TargetName="border" Value="#dfe9e6"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#dfe9e6"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MainButtons" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="12">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="TextElement.Foreground" TargetName="border" Value="#FFB0F3DC"/>
+                                <Setter Property="Background" TargetName="border" Value="#FF528977"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="TextElement.Foreground" TargetName="border" Value="#FFB0F3DC"/>
+                                <Setter Property="Background" TargetName="border" Value="#FF24765A"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DataBaseStyle" TargetType="{x:Type DataGrid}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="#FF688CAF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGrid}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="DG_ScrollViewer" Focusable="false">
+                                <ScrollViewer.Template>
+                                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Button Command="{x:Static DataGrid.SelectAllCommand}" Focusable="false" Style="{DynamicResource {ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}}" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.All}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" Width="{Binding CellsPanelHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                                            <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter" Grid.Column="1" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Column}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                                            <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" Grid.ColumnSpan="2" Grid.Row="1"/>
+                                            <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="2" Maximum="{TemplateBinding ScrollableHeight}" Orientation="Vertical" Grid.Row="1" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}"/>
+                                            <Grid Grid.Column="1" Grid.Row="2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="{Binding NonFrozenColumnsViewportHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <ScrollBar x:Name="PART_HorizontalScrollBar" Grid.Column="1" Maximum="{TemplateBinding ScrollableWidth}" Orientation="Horizontal" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}"/>
+                                            </Grid>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </ScrollViewer.Template>
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsGrouping" Value="true"/>
+                        <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <SolidColorBrush x:Key="OptionMark.Static.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="OptionMark.Static.Border" Color="#FF707070"/>
+        <Style x:Key="OptionMarkFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="14,0,0,0" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="#FFF3F9FF"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="#FF5593FF"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Background" Color="#FFE6E6E6"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Border" Color="#FFBCBCBC"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="#FF707070"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="#FFD9ECFF"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="#FF3C77DD"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#FF212121"/>
+        <Style x:Key="CheckBoxStyle1" TargetType="{x:Type CheckBox}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource OptionMark.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource OptionMark.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border x:Name="checkBoxBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="1" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" CornerRadius="6">
+                                <Grid x:Name="markGrid" Height="32" Width="32">
+                                    <Path x:Name="optionMark" Data="F1 M 9.97498,1.22334L 4.6983,9.09834L 4.52164,9.09834L 0,5.19331L 1.27664,3.52165L 4.255,6.08833L 8.33331,1.52588e-005L 9.97498,1.22334 Z " Fill="#FF4D8E64" Margin="6,5,6,9" Opacity="0" Stretch="UniformToFill"/>
+                                    <Rectangle x:Name="indeterminateMark" Fill="#FF4D8E64" Margin="2" Opacity="0"/>
+                                </Grid>
+                            </Border>
+                            <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasContent" Value="true">
+                                <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}"/>
+                                <Setter Property="Padding" Value="4,-1,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="#FF8ED3A7"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="#FF4C967D"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="#FF4C967D"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="#FF8ED3A7"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Disabled.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="#FF4C967D"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="#FF4C967D"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="#FF8ED3A7"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="#FF4C967D"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="#FF4C967D"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="1"/>
+                                <Setter Property="Opacity" TargetName="indeterminateMark" Value="0"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="{x:Null}">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="0"/>
+                                <Setter Property="Opacity" TargetName="indeterminateMark" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <Rectangle x:Name="Bar" Grid.Row="0" Fill="#FF4A9C80"/>
+        <Label Content="  Admin Mode" Grid.Row="0" FontFamily="Tahoma" FontSize="18"
+               Foreground="#FFDFE9E6" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <Button x:Name="Exit" Grid.Row="0" Content="✖" FontFamily="Tahoma" FontSize="15" 
+                Background="{x:Null}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                Height="37" Width="37" BorderBrush="{x:Null}" Foreground="#FFDFE9E6" Click="Exit_Click" Style="{DynamicResource Exit}" Margin="0,0,0,2.6"/>
+        <Button x:Name="Return" Grid.Row="0" Content="ᐸ" FontFamily="Tahoma" FontSize="20" 
+                Background="{x:Null}" HorizontalAlignment="Right" VerticalAlignment="Center"
+                Height="37" Width="37" BorderBrush="{x:Null}" Foreground="#FFDFE9E6" Click="Return_Click" Style="{DynamicResource Exit}" Margin="0,2,42,2.6" FontWeight="Bold"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="DataBase" AutoGenerateColumns="True" Margin="15" BorderBrush="#FF508B77" Background="#FFCBE2D5" Foreground="#FF326654" BorderThickness="5" FontFamily="Tahoma" FontSize="14" Style="{DynamicResource DataBaseStyle}"/>
+            <Button x:Name="ChangePassAdmin" Content="Change Password for Admin" 
+                    FontFamily="Tahoma" FontSize="15"
+                    Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center"
+                    Height="50" Width="250" Margin="0,15,0,0" Background="#FF4A9C80" Foreground="#FFD6EBE4" BorderBrush="{x:Null}" Style="{DynamicResource MainButtons}" Click="ChangePassAdmin_Click"/>
+            <Button x:Name="AddLogin" Content="Add new user" 
+                    FontFamily="Tahoma" FontSize="15"
+                    Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Height="50" Width="250" Margin="0,78,0,330.4" Background="#FF4A9C80" Foreground="#FFD6EBE4" BorderBrush="{x:Null}" Style="{DynamicResource MainButtons}" Click="AddLogin_Click"/>
+            <Label Content="   Current user" Height="40" Width="170"
+                   Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF4A9C80"
+                   FontFamily="Tahoma" FontSize="20" FontWeight="Bold" Margin="115,143,115,275.4"/>
+            <Button x:Name="Next" Content="ᐳ" FontFamily="Tahoma" FontSize="20" FontWeight="Bold" Height="40" Width="40"
+                    Grid.Column="1" Background="#FF4A9C80" Foreground="#FFD6EBE4"
+                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    BorderBrush="{x:Null}" Style="{DynamicResource MainButtons}" Margin="285,143,75,275.4" Click="Next_Click"/>
+            <Button x:Name="Previous" Content="ᐸ" FontFamily="Tahoma" FontSize="20" FontWeight="Bold" Height="40" Width="40"
+                    Grid.Column="1" Background="#FF4A9C80" Foreground="#FFD6EBE4"
+                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    BorderBrush="{x:Null}" Style="{DynamicResource MainButtons}" Margin="75,143,285,275.4" Click="Previous_Click"/>
+            <Label Content="Name:"  FontFamily="Tahoma" FontSize="20" FontWeight="Bold" Foreground="#FF4A9C80"
+                   Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,213,264,213.4" Width="126"/>
+            <Label Content="Surname:"  FontFamily="Tahoma" FontSize="20" FontWeight="Bold" Foreground="#FF4A9C80"
+                   Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,250,264,176.4" RenderTransformOrigin="0.472,0.431" Width="126"/>
+            <Label Content="Login:"  FontFamily="Tahoma" FontSize="20" FontWeight="Bold" Foreground="#FF4A9C80"
+                   Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,287,264,137.4" Width="126"/>
+            <Label Content="Status:"  FontFamily="Tahoma" FontSize="20" FontWeight="Bold" Foreground="#FF4A9C80"
+                   Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,326,264,100.4" Width="126"/>
+            <Label Content="Restriction:" FontFamily="Tahoma" FontSize="20" FontWeight="Bold" Foreground="#FF4A9C80"
+                   Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,363,264,63.4"/>
+            <TextBlock x:Name="Name" TextAlignment="Center" FontFamily="Tahoma" FontSize="15" Foreground="#FF4A9C80" Grid.Column="1" HorizontalAlignment="Center" Height="22" Margin="136,218,115,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149"/>
+            <TextBlock x:Name="Surname" TextAlignment="Center" FontFamily="Tahoma" FontSize="15" Foreground="#FF4A9C80" Grid.Column="1" HorizontalAlignment="Center" Height="22" Margin="136,256,115,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149"/>
+            <TextBlock x:Name="Login" TextAlignment="Center" FontFamily="Tahoma" FontSize="15" Foreground="#FF4A9C80" Grid.Column="1" HorizontalAlignment="Center" Height="22" Margin="136,293,115,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149"/>
+            <TextBlock x:Name="Status" TextAlignment="Center" FontFamily="Tahoma" FontSize="15" Foreground="#FF4A9C80" Grid.Column="1" HorizontalAlignment="Center" Height="22" Margin="136,333,115,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149"/>
+            <TextBlock x:Name="Restriction" TextAlignment="Center" FontFamily="Tahoma" FontSize="15" Foreground="#FF4A9C80" Grid.Column="1" HorizontalAlignment="Center" Height="22" Margin="136,371,115,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149"/>
+            <CheckBox x:Name="StatCheck"  FontFamily="Tahoma" FontSize="20" 
+                      Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                      Margin="288,326,77,100.4" Height="32" Width="35" RenderTransformOrigin="0.44,0.531" 
+                      Foreground="#FF4A9C80" BorderBrush="#FF4A9C80" Background="#FFE0F6E8" Style="{DynamicResource CheckBoxStyle1}"/>
+            <CheckBox x:Name="ResCheck" FontFamily="Tahoma" FontSize="20"
+                      Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                      Margin="288,363,77,63.4" Height="32" Width="35" RenderTransformOrigin="0.44,0.531" 
+                      Foreground="#FF4A9C80" BorderBrush="#FF4A9C80" Background="#FFE0F6E8"  Style="{DynamicResource CheckBoxStyle1}"/>
+            <Button x:Name="ChangeStatRes" Content="Change Status and Restr." Grid.Column="1"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="250" Height="50" Margin="75,0,75,8.4"
+                    Background="#FF4A9C80" Foreground="#FFD6EBE4" BorderBrush="{x:Null}"
+                    Style="{DynamicResource MainButtons}" Click="ChangeStatRes_Click"/>
+        </Grid>
+    </Grid>
+</Window>
