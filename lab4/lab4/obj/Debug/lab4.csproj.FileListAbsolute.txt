@@ -1,0 +1,15 @@
+D:\projects\program_basics2\lab4\lab4\bin\Debug\lab4.exe.config
+D:\projects\program_basics2\lab4\lab4\bin\Debug\lab4.exe
+D:\projects\program_basics2\lab4\lab4\bin\Debug\lab4.pdb
+D:\projects\program_basics2\lab4\lab4\obj\Debug\lab4.csprojAssemblyReference.cache
+D:\projects\program_basics2\lab4\lab4\obj\Debug\MainWindow.g.cs
+D:\projects\program_basics2\lab4\lab4\obj\Debug\App.g.cs
+D:\projects\program_basics2\lab4\lab4\obj\Debug\lab4_MarkupCompile.cache
+D:\projects\program_basics2\lab4\lab4\obj\Debug\lab4_MarkupCompile.lref
+D:\projects\program_basics2\lab4\lab4\obj\Debug\MainWindow.baml
+D:\projects\program_basics2\lab4\lab4\obj\Debug\lab4.g.resources
+D:\projects\program_basics2\lab4\lab4\obj\Debug\lab4.Properties.Resources.resources
+D:\projects\program_basics2\lab4\lab4\obj\Debug\lab4.csproj.GenerateResource.cache
+D:\projects\program_basics2\lab4\lab4\obj\Debug\lab4.csproj.CoreCompileInputs.cache
+D:\projects\program_basics2\lab4\lab4\obj\Debug\lab4.exe
+D:\projects\program_basics2\lab4\lab4\obj\Debug\lab4.pdb
