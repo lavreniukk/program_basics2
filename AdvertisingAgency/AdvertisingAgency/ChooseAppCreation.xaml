@@ -1,0 +1,33 @@
+﻿<Page x:Class="AdvertisingAgency.ChooseAppCreation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AdvertisingAgency"
+      mc:Ignorable="d" 
+      d:DesignHeight="415" d:DesignWidth="575"
+      Title="ChooseAppCreation" Background="#FFF0EADB">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.5" From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="CreateNew" 
+                Height="45" Width="167.6" Content="Створити нову заявку" 
+                FontFamily="Segoe UI Semibold" FontSize="15"
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                Style="{StaticResource chooseBtn}" Margin="0 5" Click="CreateNew_Click"/>
+            <Button x:Name="UpdateOld" 
+                Height="45" Width="167.6" Content="Розширити існуючу" 
+                FontFamily="Segoe UI Semibold" FontSize="15"
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                Style="{StaticResource chooseBtn}" Margin="0 5" Click="UpdateOld_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

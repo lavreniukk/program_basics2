@@ -1,0 +1,60 @@
+﻿<Page x:Class="AdvertisingAgency.ChooseShow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AdvertisingAgency"
+      mc:Ignorable="d" 
+      d:DesignHeight="415" d:DesignWidth="575"
+      Title="Page1" Background="#FFF0EADB">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.5" From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.12*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.RowSpan="2" 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <Button x:Name="ShowApps" 
+                Height="45" Width="167.6" Content="Заявки" 
+                FontFamily="Segoe UI Semibold" FontSize="15"
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                Style="{StaticResource chooseBtn}" Margin="0 5" Click="ShowApps_Click"/>
+            <Button x:Name="Products" 
+                Height="45" Width="167.6" Content="Продукція" 
+                FontFamily="Segoe UI Semibold" FontSize="15" 
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                Style="{StaticResource chooseBtn}" Margin="0 5" Click="Products_Click"/>
+            <Button x:Name="Clients" 
+                Height="45" Width="172.6" Content="Клієнти" 
+                FontFamily="Segoe UI Semibold" FontSize="15" 
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                Style="{StaticResource chooseBtn}" Margin="0 5" Click="Clients_Click"/>
+            <Button x:Name="Catalogue" 
+                Height="45" Width="172.6" Content="Каталог видань" 
+                FontFamily="Segoe UI Semibold" FontSize="15" 
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                Style="{StaticResource chooseBtn}" Margin="0 5" Click="Catalogue_Click"/>
+            <Button x:Name="Prices" 
+                Height="45" Width="167.6" Content="Прайс-лист" 
+                FontFamily="Segoe UI Semibold" FontSize="15" 
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                Style="{StaticResource chooseBtn}" Margin="0 5" Click="Prices_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

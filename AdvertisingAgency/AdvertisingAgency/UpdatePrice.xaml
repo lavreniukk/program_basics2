@@ -1,0 +1,93 @@
+﻿<Page x:Class="AdvertisingAgency.UpdatePrice"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AdvertisingAgency"
+      mc:Ignorable="d" 
+      d:DesignHeight="415" d:DesignWidth="575"
+      Title="UpdatePrice" Background="#FFF0EADB">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.5" From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="380*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="505*"/>
+            <ColumnDefinition Width="35*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="ᐸ" Grid.Row="0" Grid.Column="2"
+                Background="#e4b83d" FontFamily="SegoeUI Semibold"
+                BorderBrush="#bd882d" Foreground="#f0eadb"
+                FontSize="20" Style="{DynamicResource navBtn}"
+                VerticalAlignment="Center" HorizontalAlignment="Right"
+                Width="35" Height="35" Click="ReturnClick"/>
+
+        <StackPanel Grid.RowSpan="2"
+                    Grid.Column="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            
+            <ComboBox x:Name="IDofPrice" Margin="0 0 0 15"
+                  Height="45" Width="167.6" HorizontalContentAlignment="Center"
+                  VerticalAlignment="Top" HorizontalAlignment="Center"
+                  FontFamily="Segoe UI Semibold" FontSize="15"
+                  Style="{StaticResource comboBox}" SelectionChanged="IDofPrice_SelectionChanged"/>
+            
+            <TextBlock Text=" Ціна" 
+                       FontSize="12" FontFamily="SegoeUI Semibold"
+                       Foreground="#bd882d"
+                       Width="167.6"/>
+            <TextBox x:Name="PriceTB" Foreground="#bd882d" Background="Transparent" 
+                         FontSize="15" FontFamily="Segoe UI Semibold"
+                         TextAlignment="Center"
+                         Height="30" Width="167.6" 
+                         BorderBrush="#bd882d" BorderThickness="1"
+                         VerticalAlignment="Center" HorizontalAlignment="Center" 
+                         Style="{StaticResource CustomTB}" 
+                         TextChanged="TextChanged"/>
+
+            <TextBlock Text=" Колір" 
+                       FontSize="12" FontFamily="SegoeUI Semibold"
+                       Foreground="#bd882d"
+                       Width="167.6"/>
+            <TextBlock x:Name="Color" Foreground="#bd882d" Background="Transparent" 
+                         FontSize="15" FontFamily="Segoe UI Semibold"
+                         TextAlignment="Center"
+                         Height="30" Width="167.6" 
+                         VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+            <TextBlock Text=" Вид публікації" 
+                       FontSize="12" FontFamily="SegoeUI Semibold"
+                       Foreground="#bd882d"
+                       Width="167.6"/>
+            <TextBlock x:Name="Type" Foreground="#bd882d" Background="Transparent" 
+                         FontSize="15" FontFamily="Segoe UI Semibold"
+                         TextAlignment="Center"
+                         Height="30" Width="167.6" 
+                         VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            
+            <Button x:Name="UpdatePriceBtn"
+                Grid.Row="1" Grid.Column="1"
+                Height="45" Width="167.6" 
+                Content="Оновити продукцію" 
+                FontFamily="Segoe UI Semibold" FontSize="15"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                IsEnabled="False" Margin="0 15 0 5"
+                Style="{StaticResource chooseBtn}" Click="UpdatePriceBtn_Click"/>
+            
+        </StackPanel>
+        
+    </Grid>
+</Page>

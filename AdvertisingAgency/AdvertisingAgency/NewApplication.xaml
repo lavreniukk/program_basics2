@@ -1,0 +1,210 @@
+﻿<Page x:Class="AdvertisingAgency.NewApplication"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AdvertisingAgency"
+      mc:Ignorable="d" 
+      d:DesignHeight="415" d:DesignWidth="575"
+      Title="NewApplication" Background="#FFF0EADB">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.5" From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="380*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="505*"/>
+            <ColumnDefinition Width="35*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Content="ᐸ" Grid.Row="0" Grid.Column="2"
+                Background="#e4b83d" FontFamily="SegoeUI Semibold"
+                BorderBrush="#bd882d" Foreground="#f0eadb"
+                FontSize="20" Style="{DynamicResource navBtn}"
+                VerticalAlignment="Center" HorizontalAlignment="Right"
+                Width="35" Height="35" Click="ReturnClick"/>
+        
+        <StackPanel Grid.RowSpan="2"
+                    Grid.Column="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal"
+                    Visibility="Hidden"
+                    x:Name="Update">
+
+            <StackPanel>
+                <TextBlock Text=" ID заявки" 
+                       FontSize="12" FontFamily="SegoeUI Semibold"
+                       Foreground="#bd882d"
+                       Width="167.6"/>
+                <ComboBox x:Name="IDcb" Grid.Row="1" Grid.Column="1"
+                      Height="45" Width="167.6"
+                      VerticalAlignment="Center" HorizontalAlignment="Center"
+                      FontFamily="Segoe UI Semibold" FontSize="15"
+                      Style="{StaticResource comboBox}" SelectionChanged="IDcb_SelectionChanged"/>
+
+                <TextBlock Text=" Видання" 
+                       FontSize="12" FontFamily="SegoeUI Semibold"
+                       Foreground="#bd882d"
+                       Width="167.6"/>
+                <ComboBox x:Name="OldAppPublicationsCB" Grid.Row="1" Grid.Column="1"
+                  Height="45" Width="167.6"
+                  VerticalAlignment="Center" HorizontalAlignment="Center"
+                  FontFamily="Segoe UI Semibold" FontSize="15"
+                  Style="{StaticResource comboBox}" SelectionChanged="OldAppPublicationsCB_SelectionChanged"/>
+
+                <TextBlock Text=" Дата" 
+                       FontSize="12" FontFamily="SegoeUI Semibold"
+                       Foreground="#bd882d"
+                       Width="167.6"/>
+                <TextBox x:Name="DateOfOldApp" Foreground="#bd882d" Background="Transparent" 
+                         FontSize="15" FontFamily="Segoe UI Semibold" 
+                         TextAlignment="Center" TextWrapping="Wrap"
+                         Height="45" Width="167.6" 
+                         BorderBrush="#bd882d" BorderThickness="1"
+                         VerticalAlignment="Center" HorizontalAlignment="Center" 
+                         Style="{StaticResource CustomTB}" 
+                         TextChanged="TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Margin="45 0 0 0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text=" Ціна: " Grid.Row="1" Grid.Column="1"
+                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                   FontSize="20" FontFamily="SegoeUI Semibold"
+                   Foreground="#bd882d"/>
+                    <TextBlock Grid.Column="1" x:Name="PriceOfOldApp"
+                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                   FontSize="20" FontFamily="SegoeUI Semibold"
+                   Foreground="#bd882d" Width="111"/>
+                </StackPanel>
+                <Button x:Name="UpdateOldApp" 
+                Grid.Row="1" Grid.Column="1"
+                Height="45" Width="167.6" 
+                Content="Додати заявку" 
+                FontFamily="Segoe UI Semibold" FontSize="15"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                IsEnabled="False" Margin="0 20 0 0"
+                Style="{StaticResource chooseBtn}" Click="UpdateOldApp_Click" 
+                />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal"
+                    Visibility="Hidden"
+                    x:Name="New">
+            <StackPanel>
+                <TextBlock Text=" Клієнт" 
+                       FontSize="12" FontFamily="SegoeUI Semibold"
+                       Foreground="#bd882d"
+                       Width="167.6"/>
+                <ComboBox x:Name="ClientCB" Grid.Row="1" Grid.Column="1"
+                  Height="45" Width="167.6"
+                  VerticalAlignment="Center" HorizontalAlignment="Center"
+                  FontFamily="Segoe UI Semibold" FontSize="15"
+                  Style="{StaticResource comboBox}" SelectionChanged="SelectionChanged"/>
+
+                <TextBlock Text=" Продукція" 
+                       FontSize="12" FontFamily="SegoeUI Semibold"
+                       Foreground="#bd882d"
+                       Width="167.6"/>
+                <ComboBox x:Name="ProductsCB" Grid.Row="1" Grid.Column="1"
+                  Height="45" Width="167.6"
+                  VerticalAlignment="Center" HorizontalAlignment="Center"
+                  FontFamily="Segoe UI Semibold" FontSize="15"
+                  Style="{StaticResource comboBox}" SelectionChanged="SelectionChanged"/>
+
+                <TextBlock Text=" Видання" 
+                       FontSize="12" FontFamily="SegoeUI Semibold"
+                       Foreground="#bd882d"
+                       Width="167.6"/>
+                <ComboBox x:Name="PublicationCB" Grid.Row="1" Grid.Column="1"
+                  Height="45" Width="167.6"
+                  VerticalAlignment="Center" HorizontalAlignment="Center"
+                  FontFamily="Segoe UI Semibold" FontSize="15"
+                  Style="{StaticResource comboBox}" SelectionChanged="PublicationCB_SelectionChanged"/>
+
+                <TextBlock Text=" Зміст реклами" 
+                       FontSize="12" FontFamily="SegoeUI Semibold"
+                       Foreground="#bd882d"
+                       Width="167.6"/>
+                <TextBox x:Name="TextOfApp" Foreground="#bd882d" Background="Transparent" 
+                         FontSize="12" FontFamily="Segoe UI Semibold" 
+                         TextAlignment="Center" TextWrapping="Wrap"
+                         Height="45" Width="167.6" 
+                         BorderBrush="#bd882d" BorderThickness="1"
+                         VerticalAlignment="Center" HorizontalAlignment="Center" 
+                         Style="{StaticResource CustomTB}" 
+                         TextChanged="TextChanged"/>
+
+                <StackPanel Orientation="Horizontal" Width="167.6" Height="45">
+                    <RadioButton x:Name="Color" GroupName="ColorChoice"
+                             Content="Кольорова"
+                             FontFamily="SegoeUI Semibold" FontSize="10"
+                             Foreground="#bd882d"
+                             Height="15"
+                             Background="#FFF0EADB" BorderBrush="#FF4F3F3A" 
+                             Style="{DynamicResource CustomRadio}" Checked="Color_Checked"/>
+                    <RadioButton x:Name="Color_BW" GroupName="ColorChoice"
+                             Content="Чорно-біла"
+                             FontFamily="SegoeUI Semibold" FontSize="10"
+                             Foreground="#bd882d"
+                             Height="15"
+                             Background="#FFF0EADB" BorderBrush="#FF4F3F3A" 
+                             Style="{DynamicResource CustomRadio}" Checked="Color_Checked"/>
+                </StackPanel>
+
+                <TextBlock Text=" Дата" 
+                       FontSize="12" FontFamily="SegoeUI Semibold"
+                       Foreground="#bd882d"
+                       Width="167.6"/>
+                <TextBox x:Name="DateOfApp" Foreground="#bd882d" Background="Transparent" 
+                         FontSize="15" FontFamily="Segoe UI Semibold" 
+                         TextAlignment="Center" TextWrapping="Wrap"
+                         Height="45" Width="167.6" 
+                         BorderBrush="#bd882d" BorderThickness="1"
+                         VerticalAlignment="Center" HorizontalAlignment="Center" 
+                         Style="{StaticResource CustomTB}" 
+                         TextChanged="TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Margin="45 0 0 0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text=" Ціна: " Grid.Row="1" Grid.Column="1"
+                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                   FontSize="20" FontFamily="SegoeUI Semibold"
+                   Foreground="#bd882d"/>
+                    <TextBlock Grid.Column="1" x:Name="PriceOfApp"
+                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                   FontSize="20" FontFamily="SegoeUI Semibold"
+                   Foreground="#bd882d" Width="111"/>
+                </StackPanel>
+                <Button x:Name="AddApplication" 
+                Grid.Row="1" Grid.Column="1"
+                Height="45" Width="167.6" 
+                Content="Додати заявку" 
+                FontFamily="Segoe UI Semibold" FontSize="15"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                IsEnabled="False" Margin="0 20 0 0"
+                Style="{StaticResource chooseBtn}" 
+                Click="AddApplication_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

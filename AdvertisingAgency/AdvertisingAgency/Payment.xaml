@@ -1,0 +1,72 @@
+﻿<Page x:Class="AdvertisingAgency.Payment"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AdvertisingAgency"
+      mc:Ignorable="d" 
+      d:DesignHeight="415" d:DesignWidth="575" 
+      Title="Payment" Background="#FFF0EADB">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.5" From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="265*"/>
+            <RowDefinition Height="115*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="505*"/>
+            <ColumnDefinition Width="35*"/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer x:Name="PaySV" Grid.Row="1" Width="Auto"
+                      Grid.Column="1" Height="200"
+                      Template="{DynamicResource CustomScrollViewer}">
+            <StackPanel x:Name="PayBlocks">
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <Border BorderBrush="#bd882d" BorderThickness="3"
+                Grid.Row="2" Grid.ColumnSpan="3"
+                Background="#FFF1E2BD" CornerRadius="12 12 0 0"/>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Orientation="Horizontal"
+                    VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel>
+                <Label x:Name="DateLabel" Content="ID заявки:"
+                   Width="168" Foreground="#bd882d"
+                   FontFamily="Segoe UI Semibold" FontSize="15" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center" Height="45"/>
+
+                <ComboBox x:Name="AppIDs"
+                          Height="45" Width="167.6"
+                          VerticalAlignment="Center" HorizontalAlignment="Center"
+                          FontFamily="Segoe UI Semibold" FontSize="15"
+                          Style="{StaticResource comboBox}" Margin="0 5" SelectionChanged="AppIDs_SelectionChanged"/>
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0">
+                <CheckBox x:Name="IsPaidBox" Content="Заявка сплачена?"
+                      Foreground="#bd882d" FontFamily="SegoeUI Semibold" FontSize="15" 
+                      Background="#FFF0EADB" BorderBrush="#FFBD882D"
+                      VerticalAlignment="Center"
+                      Style="{DynamicResource CustomCheckBox}" Height="32" Click="IsPaidBox_Click" Unchecked="IsPaidBox_Unchecked"/>
+                
+                <Button x:Name="CreateWordFile" 
+                        Height="45" Width="172.6" Content="Друк квитанції" 
+                        FontFamily="Segoe UI Semibold" FontSize="15" 
+                        VerticalAlignment="Center" HorizontalAlignment="Center"
+                        IsEnabled="False"
+                        Style="{StaticResource chooseBtn}" Margin="0 18 0 0" Click="CreateWordFile_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

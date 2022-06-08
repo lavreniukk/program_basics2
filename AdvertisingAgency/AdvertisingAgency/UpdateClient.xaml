@@ -1,0 +1,153 @@
+﻿<Page x:Class="AdvertisingAgency.UpdateClient"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AdvertisingAgency"
+      mc:Ignorable="d" 
+      d:DesignHeight="415" d:DesignWidth="575"
+      Title="UpdateClient" Background="#FFF0EADB">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.5" From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="380*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="505*"/>
+            <ColumnDefinition Width="35*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Content="ᐸ" Grid.Row="0" Grid.Column="2"
+                Background="#e4b83d" FontFamily="SegoeUI Semibold"
+                BorderBrush="#bd882d" Foreground="#f0eadb"
+                FontSize="20" Style="{DynamicResource navBtn}"
+                VerticalAlignment="Center" HorizontalAlignment="Right"
+                Width="35" Height="35" Click="ReturnClick"/>
+
+        <StackPanel Grid.RowSpan="2" Grid.Column="1"
+                    VerticalAlignment="Top" Margin="0 20 0 0"
+                    HorizontalAlignment="Center" Orientation="Horizontal">
+            <StackPanel>
+                <ComboBox x:Name="IDofClient" Grid.Row="1" Grid.Column="1"
+                  Height="45" Width="167.6" HorizontalContentAlignment="Center"
+                  VerticalAlignment="Top" HorizontalAlignment="Center"
+                  FontFamily="Segoe UI Semibold" FontSize="15"
+                  Style="{StaticResource comboBox}" SelectionChanged="IDofClient_SelectionChanged"/>
+
+                <TextBlock Text=" Ім'я" Margin="0 15 0 0"
+                       FontSize="12" FontFamily="SegoeUI Semibold"
+                       Foreground="#bd882d"
+                       Width="167.6"/>
+                <TextBox x:Name="Name" Foreground="#bd882d" Background="Transparent" 
+                         FontSize="15" FontFamily="Segoe UI Semibold" 
+                         TextAlignment="Center"
+                         Height="30" Width="167.6" 
+                         BorderBrush="#bd882d" BorderThickness="1"
+                         VerticalAlignment="Center" HorizontalAlignment="Center" 
+                         Style="{StaticResource CustomTB}" 
+                         TextChanged="TextChanged"/>
+
+                <TextBlock Text=" Прізвище" 
+                           FontSize="12" FontFamily="SegoeUI Semibold"
+                           Foreground="#bd882d"
+                           Width="167.6"/>
+                <TextBox x:Name="Surname"
+                         Foreground="#bd882d" Background="Transparent" 
+                         FontSize="15" FontFamily="Segoe UI Semibold" 
+                         TextAlignment="Center"
+                         Height="30" Width="167.6" 
+                         BorderBrush="#bd882d" BorderThickness="1"
+                         VerticalAlignment="Center" HorizontalAlignment="Center" 
+                         Style="{StaticResource CustomTB}"
+                         TextChanged="TextChanged"/>
+
+                <TextBlock Text=" По-батькові" 
+                           FontSize="12" FontFamily="SegoeUI Semibold"
+                           Foreground="#bd882d"
+                           Width="167.6"/>
+                <TextBox x:Name="SecondName"
+                         Foreground="#bd882d" Background="Transparent" 
+                         FontSize="15" FontFamily="Segoe UI Semibold" 
+                         TextAlignment="Center"
+                         Height="30" Width="167.6" 
+                         BorderBrush="#bd882d" BorderThickness="1"
+                         VerticalAlignment="Center" HorizontalAlignment="Center" 
+                         Style="{StaticResource CustomTB}"
+                         TextChanged="TextChanged"/>
+
+                <TextBlock Text=" Країна" Margin="0 15 0 0"
+                           FontSize="12" FontFamily="SegoeUI Semibold"
+                           Foreground="#bd882d"
+                           Width="167.6"/>
+                <TextBox x:Name="Country"
+                         Foreground="#bd882d" Background="Transparent" 
+                         FontSize="15" FontFamily="Segoe UI Semibold" 
+                         TextAlignment="Center"
+                         Height="30" Width="167.6" 
+                         BorderBrush="#bd882d" BorderThickness="1"
+                         VerticalAlignment="Center" HorizontalAlignment="Center" 
+                         Style="{StaticResource CustomTB}"
+                         TextChanged="TextChanged"/>
+
+                <TextBlock Text=" Місто" 
+                           FontSize="12" FontFamily="SegoeUI Semibold"
+                           Foreground="#bd882d"
+                           Width="167.6"/>
+                <TextBox x:Name="City"
+                         Foreground="#bd882d" Background="Transparent" 
+                         FontSize="15" FontFamily="Segoe UI Semibold" 
+                         TextAlignment="Center"
+                         Height="30" Width="167.6" 
+                         BorderBrush="#bd882d" BorderThickness="1"
+                         VerticalAlignment="Center" HorizontalAlignment="Center" 
+                         Style="{StaticResource CustomTB}"
+                         TextChanged="TextChanged"/>
+
+                <TextBlock Text=" Телефон" Margin="0 15 0 0"
+                           FontSize="12" FontFamily="SegoeUI Semibold"
+                           Foreground="#bd882d"
+                           Width="167.6"/>
+                <TextBox x:Name="PhoneNum"
+                         Foreground="#bd882d" Background="Transparent" 
+                         FontSize="15" FontFamily="Segoe UI Semibold" 
+                         TextAlignment="Center"
+                         Height="30" Width="167.6" 
+                         BorderBrush="#bd882d" BorderThickness="1"
+                         VerticalAlignment="Center" HorizontalAlignment="Center" 
+                         Style="{StaticResource CustomTB}"
+                         TextChanged="TextChanged"/>
+            </StackPanel>
+            <StackPanel Margin="15 0 0 0" VerticalAlignment="Center">
+                <Button x:Name="UpdateClientBtn" 
+                Grid.Row="1" Grid.Column="1"
+                Height="45" Width="167.6" 
+                Content="Оновити клієнта" 
+                FontFamily="Segoe UI Semibold" FontSize="15"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                IsEnabled="False" Margin="0 0 0 5"
+                Style="{StaticResource chooseBtn}" Click="UpdateClientBtn_Click"/>
+
+                <Button x:Name="DelClientBtn" 
+                Grid.Row="1" Grid.Column="1"
+                Height="45" Width="167.6" 
+                Content="Видалити клієнта" 
+                FontFamily="Segoe UI Semibold" FontSize="15"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Style="{StaticResource chooseBtn}" Click="DelClientBtn_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Page>
